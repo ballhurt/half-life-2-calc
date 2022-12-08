@@ -13,7 +13,8 @@ w2.innerHTML = pole
 }
 function CL(){
 lista = "";
-w2.innerHTML = "A";
+w2.innerHTML = "λ";
+w3.innerHTML = "λ";
 pole = "";}
 
 function kr(){
@@ -28,6 +29,7 @@ function disp(x){
 pole = pole + x;
 lista += x
 w2.innerHTML = pole;
+w3.innerHTML = eval(lista)
 if(lista[lista.length - 1] == "0" && lista[lista.length - 2] == "/") {
 			lista = "";
 			w2.innerHTML = "Nie dzieli się przez 0"
@@ -45,11 +47,22 @@ function dod(xd) {
 		pole = "";
 		lista += xd;
 		if(lista[lista.length - 2] != xd && !/[0-9]/.test(lista[lista.length - 2]) ) {
-			lista = lista.slice(0, lista.length - 2) + xd;
+			if(lista[lista.length - 2] == "*" && lista[lista.length - 1] == xd && xd == "-"){}
+			else if(lista[lista.length - 3] == "*" && lista[lista.length - 2] == "-" && lista[lista.length - 1] == xd)
+			{
+				lista = lista.slice(0, lista.length - 3) + xd;
+			}
+			else {
+				lista = lista.slice(0, lista.length - 2) + xd;
+			}
 		}
-
-		 else if(lista[lista.length - 1] == "-" && lista[lista.length - 2] == "-") {
-			lista = lista.slice(0, lista.length - 2) + '+';
+		else if(lista[lista.length - 1] == "-" && lista[lista.length - 2] == "-") {
+			if (lista[lista.length - 3] == "*" && lista[lista.length - 2] == "-") {
+				lista = lista.slice(0, lista.length - 3) + xd
+			}
+			else {
+				lista = lista.slice(0, lista.length - 2) + '+';
+			}
 		}
 		else if(lista[lista.length - 1] == xd && lista[lista.length - 2] == xd) {
 			lista = lista.slice(0, lista.length - 2) + xd;
@@ -57,29 +70,27 @@ function dod(xd) {
 	}
 
 console.log(lista)
-console.log(u)
-}
-function row() {
-b = +pole;
-pole = ""
-w2.innerHTML = eval(lista);
-console.log(lista)
-lista = "";
+w3.innerHTML = lista
 }
 
 
 function trg(h){
-if(h == "ctg") {
-r = 1/Math.tan(parseFloat(pole)*Math.PI/180);}
-else if (h == "tg"){
-r = Math.tan(parseFloat(pole)*Math.PI/180);}
-else if (h == "cos"){
-r = Math.cos(parseFloat(pole)*Math.PI/180);}
-else if (h == "sin"){
-r = Math.sin(parseFloat(pole)*Math.PI/180);}
-pole = r
-w2.innerHTML = r
-lista = r
+if(lista == ""){
+w2.innerHTML = "Najpierw podaj liczbę"
+pole = ""}
+	else {
+	if(h == "ctg") {
+		r = 1/Math.tan(parseFloat(pole)*Math.PI/180);}
+	else if (h == "tg"){
+		r = Math.tan(parseFloat(pole)*Math.PI/180);}
+	else if (h == "cos"){
+		r = Math.cos(parseFloat(pole)*Math.PI/180);}
+	else if (h == "sin"){
+		r = Math.sin(parseFloat(pole)*Math.PI/180);}
+	pole = r
+	w2.innerHTML = r
+	lista = r
+	}
 }
 function showdiv(){
 if (sdiv == 0){
@@ -94,11 +105,13 @@ sdiv = 0;
 
 <html>
 <head>
-  <link rel="stylesheet" href="styl.css">
+	<title>Jordon Fricoman Kalkulador</title>
+	<link rel="stylesheet" href="styl.css">
 </head>
 <body>
 	<div class='fleks'>
 		<div class='wszystko'>
+			<div id="w3">A</div>
 			<div id="w2">A</div>
 			<div class='sektory'>
 				<div>
