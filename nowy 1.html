@@ -1,0 +1,143 @@
+<script>
+var pole = ""
+
+var lista =[];
+var u;
+var sdiv = 0;
+
+function DEL(){
+lista = lista.slice(0, -1)
+pole = pole.slice(0, -1)
+w2.innerHTML = pole
+
+}
+function CL(){
+lista = "";
+w2.innerHTML = "A";
+pole = "";}
+
+function kr(){
+if(!(pole.includes("."))){
+lista += ".";
+pole = pole + "."
+w2.innerHTML = pole;
+}
+else{}
+}
+function disp(x){
+pole = pole + x;
+lista += x
+w2.innerHTML = pole;
+if(lista[lista.length - 1] == "0" && lista[lista.length - 2] == "/") {
+			lista = "";
+			w2.innerHTML = "Nie dzieli się przez 0"
+		}
+}
+function dod(xd) {
+	if(/[0-9]/.test(lista[lista.length - 1])){
+		pole = "";
+		u = eval(lista)
+		w2.innerHTML = u
+		lista = u
+		lista += xd;
+		}
+	else{
+		pole = "";
+		lista += xd;
+		if(lista[lista.length - 2] != xd && !/[0-9]/.test(lista[lista.length - 2]) ) {
+			lista = lista.slice(0, lista.length - 2) + xd;
+		}
+
+		 else if(lista[lista.length - 1] == "-" && lista[lista.length - 2] == "-") {
+			lista = lista.slice(0, lista.length - 2) + '+';
+		}
+		else if(lista[lista.length - 1] == xd && lista[lista.length - 2] == xd) {
+			lista = lista.slice(0, lista.length - 2) + xd;
+		}
+	}
+
+console.log(lista)
+console.log(u)
+}
+function row() {
+b = +pole;
+pole = ""
+w2.innerHTML = eval(lista);
+console.log(lista)
+lista = "";
+}
+
+
+function trg(h){
+if(h == "ctg") {
+r = 1/Math.tan(parseFloat(pole)*Math.PI/180);}
+else if (h == "tg"){
+r = Math.tan(parseFloat(pole)*Math.PI/180);}
+else if (h == "cos"){
+r = Math.cos(parseFloat(pole)*Math.PI/180);}
+else if (h == "sin"){
+r = Math.sin(parseFloat(pole)*Math.PI/180);}
+pole = r
+w2.innerHTML = r
+lista = r
+}
+function showdiv(){
+if (sdiv == 0){
+tryg.style.display = "block";
+sdiv = 1}
+else{
+tryg.style.display = "none";
+sdiv = 0;
+}
+}
+</script>
+
+<html>
+<head>
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+	<div class='fleks'>
+		<div class='wszystko'>
+			<div id="w2">A</div>
+			<div class='sektory'>
+				<div>
+					<input type="button" value="1" onclick="disp(1)" id="btn">
+					<input type="button" value="2" onclick="disp(2)" id="btn">
+					<input type="button" value="3" onclick="disp(3)" id="btn"><br>
+					<input type="button" value="4" onclick="disp(4)" id="btn">
+					<input type="button" value="5" onclick="disp(5)" id="btn">
+					<input type="button" value="6" onclick="disp(6)" id="btn"><br>
+					<input type="button" value="7" onclick="disp(7)" id="btn">
+					<input type="button" value="8" onclick="disp(8)" id="btn">
+					<input type="button" value="9" onclick="disp(9)" id="btn"><br>
+					<input type="button" value="0" onclick="disp(0)" id="btn">
+					<input type="button" value="." onclick="kr()" id="btn">
+				</div>
+				<div class='dzialania'>
+				<div  class='dzialania1'>
+					<div>
+						<input type="button" value="+" onclick="dod('+')" id="fct">
+						<input type="button" value="-" onclick="dod('-')" id="fct">
+						<input type="button" value="*" onclick="dod('*')" id="fct">
+					</div>
+					<div>
+						<input type="button" value="CL" onclick="CL()" id="fct">
+						<input type="button" value="DEL" onclick="DEL()" id="fct">
+						<input type="button" value="/" onclick="dod('/')" id="fct"><br>
+					</div>
+				</div>
+						<input type="button" value="trygonometria" OnClick="showdiv()" id="tr">
+						<div id="tryg" style="display:none">
+							<input class='trybiki' type="button" onclick="trg('sin')" value="sin" id="vsin"/>
+							<input class='trybiki' onclick="trg('cos')" type="button" value="cos" id="vcos"/><br>
+							<input class='trybiki' onclick="trg('tg')" type="button" value="tg" id="vtg"/>
+							<input class='trybiki' onclick="trg('ctg')" type="button" value="ctg" id="vctg"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

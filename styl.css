@@ -1,0 +1,160 @@
+@font-face {
+  font-family: HalfLife2;
+  src: url(halflife2.ttf);
+}
+
+body {
+	background-image: url('https://wallpapercave.com/wp/wp2259092.jpg');
+	background-size: 100% 100%;
+}
+
+.fleks {
+	display: flex;
+	justify-content: center;
+	margin-top: 18%;
+}
+
+.wszystko {
+	background-color: rgba(0,0,0, 0.3);
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#btn {
+	width: 40;
+	height: 40;
+	margin-bottom: 3px;
+	background: rgba(0,0,0,0.2);
+	border-radius: 10px;
+	color: yellow;
+	text-shadow: 0px 0px 15px rgba(255, 255, 0, 0.6);
+	font-family: "HalfLife2";
+	font-size: 30;
+	border: none;
+	
+	
+}
+
+#btn:hover {
+	text-shadow: 0px 0px 15px yellow;
+	transition: 0.5s;
+}
+#fct {
+	margin: 3px;
+	width: 40;
+	height: 20;
+	background-color:gray;
+	color: white;
+	font-family: "Tahoma";
+	font-size: 13px;
+	border-top: 1px white solid;
+	border-left: 1px white solid;
+	border-bottom: 1px black solid;
+	border-right: 1px black solid;
+	outline: solid black 1px:
+	
+}
+#w2 {
+	color: yellow;
+	font-family: "Trebuchet MS";
+	font-size: 30;
+	text-shadow: 0px 0px 15px yellow;
+	margin-bottom: 10px;
+}
+
+#tr {
+	width:100%;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	padding: 7px;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.2);
+	font-family: "Trebuchet MS";
+	text-transform: uppercase;
+	color: yellow;
+	text-shadow: 0px 0px 15px rgba(255, 255, 0, 0.6);
+	text-align: center;
+}
+#tr:hover {
+	text-shadow: 0px 0px 15px yellow;
+	transition: 0.5s;
+	
+}
+#btn:active {
+	transition: 0.1s;
+	color: black;
+	background-color: rgba(255, 255, 0, 0.8);
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+#tr:active {
+	transition: 0.1s;
+	color: black;
+	background-color: rgba(255, 255, 0, 0.8);
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+
+#tryg {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: -5%;
+}
+
+
+
+.trybiki {
+	margin-top: 5px;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.2);
+	font-family: "Trebuchet MS";
+	text-transform: uppercase;
+	color: yellow;
+	text-shadow: 0px 0px 15px yellow;
+}
+
+.trybiki:hover {
+	text-shadow: 0px 0px 15px yellow;
+	transition: 0.5s;
+	
+}
+.trybiki:active {
+	transition: 0.1s;
+	color: black;
+	background-color: rgba(255, 255, 0, 0.8);
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+.sektory {
+	display: flex;
+	justify-content: center;
+}
+
+.dzialania {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	
+}
+.dzialania1 {
+	border: 15px solid;
+	border-top: 10px solid;
+	border-radius: 5px;
+	background-color: rgba(55, 55, 55, 0.8);
+	border-color: gray;
+}
+
+.dzialania1::before {
+	font-family: "Verdana";
+	font-weight: bold;
+	font-size: 15px;
+	display: block;
+	background-color: gray;
+	width: 100%;
+	padding-bottom: 12px;
+	content: 'Console';
+	color: white;
+}
