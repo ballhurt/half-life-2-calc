@@ -51,13 +51,36 @@ body {
 	border-left: 1px white solid;
 	border-bottom: 1px black solid;
 	border-right: 1px black solid;
-	outline: solid black 1px:
+	outline: solid black 1px;
 	
+}
+#fct:hover {
+	background-color: #A0A0A0;
+	transition: 0.2s;
+}
+
+#fct:active {
+	border-top: 1px black solid;
+	border-left: 1px black solid;
+	border-bottom: 1px white solid;
+	border-right: 1px white solid;
+/*	outline: solid white 1px; */
+	background-color: #585858;
+	transition: 0.2s;
 }
 #w2 {
 	color: yellow;
 	font-family: "Trebuchet MS";
 	font-size: 30;
+	text-shadow: 0px 0px 15px yellow;
+	margin-bottom: 10px;
+}
+
+
+#w3 {
+	color: yellow;
+	font-family: "Trebuchet MS";
+	font-size: 15;
 	text-shadow: 0px 0px 15px yellow;
 	margin-bottom: 10px;
 }
@@ -140,8 +163,10 @@ body {
 	
 }
 .dzialania1 {
-	border: 15px solid;
-	border-top: 10px solid;
+	border-bottom: 15px solid;
+	border-left: 15px solid;
+	border-right: 15px solid;
+	border-top: 5px solid;
 	border-radius: 5px;
 	background-color: rgba(55, 55, 55, 0.8);
 	border-color: gray;
