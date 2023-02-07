@@ -93,13 +93,20 @@ pole = ""}
 	}
 }
 function showdiv(){
-if (sdiv == 0){
-tryg.style.display = "block";
-sdiv = 1}
-else{
-tryg.style.display = "none";
-sdiv = 0;
+	if (sdiv == 0){
+	tryg.style.display = "block";
+	tryg.style.transform = "translateY(0px)";
+	sdiv = 1;
+	tryg.style.opacity = 1;
+	tryg.style.zIndex = 0;
 }
+	else{
+	tryg.style.display = "block";
+	tryg.style.transform = "translateY(-20px)";
+	tryg.style.opacity = 0;
+	tryg.style.zIndex = -10;
+	sdiv = 0;
+	}
 }
 </script>
 
@@ -141,7 +148,8 @@ sdiv = 0;
 					</div>
 				</div>
 						<input type="button" value="trygonometria" OnClick="showdiv()" id="tr">
-						<div id="tryg" style="display:none">
+						<div id="tryg" style="display:block; transform: translateY(-20px);
+						z-index: -10; opacity: 0; transition: 0.5s">
 							<input class='trybiki' type="button" onclick="trg('sin')" value="sin" id="vsin"/>
 							<input class='trybiki' onclick="trg('cos')" type="button" value="cos" id="vcos"/><br>
 							<input class='trybiki' onclick="trg('tg')" type="button" value="tg" id="vtg"/>
